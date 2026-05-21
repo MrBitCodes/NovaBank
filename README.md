@@ -511,6 +511,282 @@ Available at:
 
 ---
 
+# Real Banking Workflows
+
+## User Registration Flow
+
+```text
+1. User registers
+2. Email verification sent
+3. User verifies email
+4. KYC pending
+5. Admin reviews KYC
+6. Account activated
+```
+
+---
+
+## Login Flow
+
+```text
+1. User enters credentials
+2. Password verified
+3. Optional OTP verification
+4. JWT access token issued
+5. Refresh token stored securely
+6. Session audit log created
+```
+
+---
+
+## Money Transfer Flow
+
+```text
+1. Validate sender account
+2. Validate receiver account
+3. Check account status
+4. Check balance
+5. Create pending transaction
+6. Open database transaction
+7. Create ledger debit entry
+8. Create ledger credit entry
+9. Update balances atomically
+10. Commit database transaction
+11. Mark transaction completed
+12. Send notifications
+13. Create audit logs
+```
+
+---
+
+# Admin System
+
+## Admin Roles
+
+```text
+SUPER_ADMIN
+ADMIN
+SUPPORT_AGENT
+FRAUD_ANALYST
+AUDITOR
+CUSTOMER
+```
+
+---
+
+## Admin Features
+
+### User Management
+
+* Suspend users
+* Freeze accounts
+* Reset MFA
+* Review KYC
+* Change account status
+
+### Fraud Monitoring
+
+* Inspect suspicious transfers
+* Review flagged activity
+* Lock accounts temporarily
+* Review failed login attempts
+
+### Financial Monitoring
+
+* Search transactions
+* Review ledger entries
+* Export reports
+* View transfer analytics
+
+### Audit System
+
+* View all sensitive actions
+* Track admin operations
+* Monitor security events
+
+---
+
+# Transaction States
+
+```text
+PENDING
+PROCESSING
+COMPLETED
+FAILED
+REVERSED
+PENDING_REVIEW
+```
+
+---
+
+# Account States
+
+```text
+ACTIVE
+FROZEN
+SUSPENDED
+CLOSED
+PENDING_KYC
+```
+
+---
+
+# API Modules
+
+## Auth Module
+
+Responsible for:
+
+* registration
+* login
+* JWT
+* refresh tokens
+* MFA
+* password reset
+
+---
+
+## Account Module
+
+Responsible for:
+
+* balances
+* account creation
+* account states
+* IBAN generation
+
+---
+
+## Transaction Module
+
+Responsible for:
+
+* transfers
+* validation
+* settlements
+* transaction history
+
+---
+
+## Ledger Module
+
+Responsible for:
+
+* immutable accounting records
+* debit/credit entries
+* reconciliation
+
+---
+
+## Fraud Module
+
+Responsible for:
+
+* anomaly detection
+* suspicious activity rules
+* risk scoring
+
+---
+
+## Notification Module
+
+Responsible for:
+
+* emails
+* SMS mockups
+* security alerts
+* transaction alerts
+
+---
+
+## Audit Module
+
+Responsible for:
+
+* tracking actions
+* security logs
+* compliance records
+
+---
+
+# Recommended Repository Structure
+
+```text
+novabank/
+├── apps/
+│   ├── api/
+│   ├── client-app/
+│   └── admin-panel/
+│
+├── packages/
+│   ├── shared-types/
+│   ├── ui/
+│   └── utils/
+│
+├── infrastructure/
+│   ├── docker/
+│   ├── nginx/
+│   └── scripts/
+│
+├── docs/
+├── prisma/
+├── tests/
+└── .github/
+```
+
+---
+
+# Recommended Development Order
+
+## Phase 1
+
+* Setup monorepo
+* Setup Docker
+* Setup PostgreSQL
+* Setup Redis
+* Setup NestJS
+* Setup Prisma
+
+---
+
+## Phase 2
+
+* Authentication system
+* JWT
+* Refresh tokens
+* RBAC
+* Admin authentication
+
+---
+
+## Phase 3
+
+* Account creation
+* Balance management
+* Ledger system
+* Transaction engine
+
+---
+
+## Phase 4
+
+* Admin dashboard
+* Fraud monitoring
+* Audit logs
+* Notifications
+
+---
+
+## Phase 5
+
+* Docker deployment
+* CI/CD
+* Rate limiting
+* Security hardening
+* Integration testing
+
+---
+
 # GitHub README Summary
 
 ```md
